@@ -3,232 +3,188 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-void wholeLine(string& result, char number) {
-    for (int i = 1; i <= 10; i++) {
-        result += number;
+vector<string> getNumber(int number) {
+    vector<string> zero = {
+        "0000000000",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0        0",
+        "0000000000"
+    };
+
+    vector<string> one = {
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1",
+        "         1"
+    };
+
+    vector <string> two = {
+        "2222222222",
+        "         2",
+        "         2",
+        "         2",
+        "         2",
+        "2222222222",
+        "2         ",
+        "2         ",
+        "2         ",
+        "2         ",
+        "2222222222"
+    };
+
+    vector <string> three = {
+        "3333333333",
+        "         3",
+        "         3",
+        "         3",
+        "         3",
+        "3333333333",
+        "         3",
+        "         3",
+        "         3",
+        "         3",
+        "3333333333"
+    };
+
+    vector <string> four = {
+        "4        4",
+        "4        4",
+        "4        4",
+        "4        4",
+        "4        4",
+        "4444444444",
+        "         4",
+        "         4",
+        "         4",
+        "         4",
+        "         4"
+    };
+
+    vector <string> five = {
+        "5555555555",
+        "5         ",
+        "5         ",
+        "5         ",
+        "5         ",
+        "5555555555",
+        "         5",
+        "         5",
+        "         5",
+        "         5",
+        "5555555555"
+    };
+
+    vector<string> six = {
+        "6666666666",
+        "6         ",
+        "6         ",
+        "6         ",
+        "6         ",
+        "6666666666",
+        "6        6",
+        "6        6",
+        "6        6",
+        "6        6",
+        "6666666666"
+    };
+
+    vector <string> seven = {
+        "7777777777",
+        "         7",
+        "         7",
+        "         7",
+        "         7",
+        "         7",
+        "         7",
+        "         7",
+        "         7",
+        "         7",
+        "         7"
+    };
+
+    vector <string> eight = {
+        "8888888888",
+        "8        8",
+        "8        8",
+        "8        8",
+        "8        8",
+        "8888888888",
+        "8        8",
+        "8        8",
+        "8        8",
+        "8        8",
+        "8888888888"
+    };
+
+    vector <string> nine = {
+        "9999999999",
+        "9        9",
+        "9        9",
+        "9        9",
+        "9        9",
+        "9999999999",
+        "         9",
+        "         9",
+        "         9",
+        "         9",
+        "9999999999"
+    };
+
+    switch (number) {
+    case 0:
+        return zero;
+        break;
+    case 1:
+        return one;
+        break;
+    case 2:
+        return two;
+        break;
+    case 3:
+        return three;
+        break;
+    case 4:
+        return four;
+        break;
+    case 5:
+        return five;
+        break;
+    case 6:
+        return six;
+        break;
+    case 7:
+        return seven;
+        break;
+    case 8:
+        return eight;
+        break;
+    case 9:
+        return nine;
+        break;
+    default:
+        return zero;
+        break;
     }
 }
 
-void beginningAndEnd(string& result, char number) {
-    result += number;
-    for (int i = 1; i <= 8; i++) {
-        result += ' ';
-    }
-    result += number;
-}
-
-void beginning(string& result, char number) {
-    result += number;
-    for (int i = 1; i <= 9; i++) {
-        result += ' ';
-    }
-}
-
-void end(string& result, char number) {
-    for (int i = 1; i <= 9; i++) {
-        result += ' ';
-    }
-
-    result += number;
-}
-
-string colon() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 3 || i == 4 || i == 8 || i == 9) {
-            result += "...";
-        }
-
-        result += '\n';
-    }
-
-    return result;
-}
-
-string zero() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 11) {
-            wholeLine(result, '0');
-        }
-        else {
-            beginningAndEnd(result, '0');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-
-}
-
-string one() {
-    string result;
-    for (int i = 1; i <= 11; i++) {
-        end(result, '1');
-
-        result += '\n';
-    }
-
-    return result;
-}
-
-string two() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 6 || i == 11) {
-            wholeLine(result, '2');
-        }
-        else if (i >= 2 && i <= 5) {
-            end(result, '2');
-        }
-        else {
-            beginning(result, '2');
-        }
-        result += '\n';
-    }
-
-    return result;
-}
-
-string three() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 6 || i == 11) {
-            wholeLine(result, '3');
-        }
-        else {
-            end(result, '3');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-
-}
-
-string four() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i <= 5) {
-            beginningAndEnd(result, '4');
-        }
-        else if (i == 6) {
-            wholeLine(result, '4');
-        }
-        else {
-            end(result, '4');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-}
-
-string five() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 6 || i == 11) {
-            wholeLine(result, '5');
-        }
-        else if (i >= 2 && i <= 5) {
-            beginning(result, '5');
-        }
-        else {
-            end(result, '5');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-}
-
-string six() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 6 || i == 11) {
-            wholeLine(result, '6');
-        }
-        else if (i >= 2 && i <= 5) {
-            beginning(result, '6');
-        }
-        else {
-            beginningAndEnd(result, '6');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-
-}
-
-string seven() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1) {
-            wholeLine(result, '7');
-        }
-        else {
-            end(result, '7');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-}
-
-string eight() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 6 || i == 11) {
-            wholeLine(result, '8');
-        }
-        else {
-            beginningAndEnd(result, '8');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-}
-
-string nine() {
-    string result;
-
-    for (int i = 1; i <= 11; i++) {
-        if (i == 1 || i == 6 || i == 11) {
-            wholeLine(result, '9');
-        }
-        else if (i >= 2 && i <= 5) {
-            beginningAndEnd(result, '9');
-        }
-        else {
-            end(result, '9');
-        }
-
-        result += '\n';
-    }
-
-    return result;
-}
 bool isNumberCorrect(int number) {
     if (number < 1000 || number > 9999) {
         return false;
@@ -237,8 +193,21 @@ bool isNumberCorrect(int number) {
     return true;
 }
 
-void timer(int minutes, int seconds) {
 
+void timer(int minutes, int seconds) {
+    vector<string> colon = {
+        "  ",
+        "  ",
+        "..",
+        "..",
+        "  ",
+        "  ",
+        "  ",
+        "..",
+        "..",
+        "  ",
+        "  "
+    };
     while (true) {
         if (minutes == 0 && seconds == 0) {
             break;
@@ -249,9 +218,83 @@ void timer(int minutes, int seconds) {
             minutes--;
         }
 
+
+        int secondsTmp = seconds;
+        int minutesTmp = minutes;
+
         system("cls");
-        cout << minutes << ":" << seconds--;
-        Sleep(1000);
+        if (minutes >= 100) {
+            vector<string> fifthDigit = getNumber(secondsTmp % 10);
+            secondsTmp /= 10;
+            vector<string> fourthDigit = getNumber(secondsTmp);
+
+            vector<string> thirdDigit = getNumber(minutesTmp % 10);
+            minutesTmp /= 10;
+            vector<string> secondDigit = getNumber(minutesTmp % 10);
+            minutesTmp /= 10;
+            vector<string> firstDigit = getNumber(minutesTmp);
+
+
+
+            for (int i = 0; i < 7; i++) {
+                cout << endl;
+            }
+            int count = 1;
+            for (int i = 0; i < 11; i++) {
+                cout << "            " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << endl;
+
+            }
+
+            for (int i = 0; i < 6; i++) {
+                cout << endl;
+            }
+            Sleep(1000);
+        }
+        else if (minutes >= 10 && minutes < 100) {
+            vector<string> fourthDigit = getNumber(secondsTmp % 10);
+            secondsTmp /= 10;
+            vector<string> thirdDigit = getNumber(secondsTmp);
+
+            vector<string> secondDigit = getNumber(minutesTmp % 10);
+            minutesTmp /= 10;
+            vector<string> firstDigit = getNumber(minutesTmp);
+
+            for (int i = 0; i < 7; i++) {
+                cout << endl;
+            }
+
+            for (int i = 0; i < 11; i++) {
+                cout << "            " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << "   " << endl;
+
+            }
+
+            for (int i = 0; i < 6; i++) {
+                cout << endl;
+            }
+            Sleep(1000);
+        }
+        else if (minutes < 10) {
+            vector<string> thirdDigit = getNumber(secondsTmp % 10);
+            secondsTmp /= 10;
+            vector<string> secondDigit = getNumber(secondsTmp);
+
+            vector<string> firstDigit = getNumber(minutesTmp);
+
+            for (int i = 0; i < 7; i++) {
+                cout << endl;
+            }
+            int count = 1;
+            for (int i = 0; i < 11; i++) {
+                cout << "            " << firstDigit[i] << "   " << colon[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "  " << endl;
+
+            }
+
+            for (int i = 0; i < 6; i++) {
+                cout << endl;
+            }
+            Sleep(1000);
+        }
+        seconds--;
     }
 }
 
@@ -269,7 +312,7 @@ int main()
     int seconds = number % 60;
 
     timer(minutes, seconds);
-
+    
     return 0;
 }
 
