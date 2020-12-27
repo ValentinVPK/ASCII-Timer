@@ -209,8 +209,12 @@ void timer(int minutes, int seconds) {
         "  "
     };
     while (true) {
-        if (minutes == 0 && seconds == 0) {
+        if (minutes == 0 && seconds < 0) {
+            Beep(300, 1000);
             break;
+        }
+        if (minutes == 0 && seconds == 0) {
+            seconds = -1;
         }
 
         if (seconds == 0) {
@@ -234,14 +238,12 @@ void timer(int minutes, int seconds) {
             minutesTmp /= 10;
             vector<string> firstDigit = getNumber(minutesTmp);
 
-
-
             for (int i = 0; i < 7; i++) {
                 cout << endl;
             }
             int count = 1;
             for (int i = 0; i < 11; i++) {
-                cout << "            " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << endl;
+                cout << "       " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << "      " << endl;
 
             }
 
@@ -264,7 +266,7 @@ void timer(int minutes, int seconds) {
             }
 
             for (int i = 0; i < 11; i++) {
-                cout << "            " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << "   " << endl;
+                cout << "             " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << "             " << endl;
 
             }
 
@@ -285,7 +287,7 @@ void timer(int minutes, int seconds) {
             }
             int count = 1;
             for (int i = 0; i < 11; i++) {
-                cout << "            " << firstDigit[i] << "   " << colon[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "  " << endl;
+                cout << "                   " << firstDigit[i] << "   " << colon[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "                   " << endl;
 
             }
 
@@ -303,11 +305,12 @@ int main()
     int number;
     cin >> number;
 
+    /*
     if (!isNumberCorrect(number)) {
         cout << "-1";
         return 0;
     }
-
+    */
     int minutes = number / 60;
     int seconds = number % 60;
 
