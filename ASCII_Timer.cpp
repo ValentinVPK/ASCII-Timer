@@ -241,10 +241,9 @@ void timer(int minutes, int seconds) {
             for (int i = 0; i < 7; i++) {
                 cout << endl;
             }
-            int count = 1;
+            
             for (int i = 0; i < 11; i++) {
-                cout << "       " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << "      " << endl;
-
+                cout << "  " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << "           " << endl;
             }
 
             for (int i = 0; i < 6; i++) {
@@ -267,7 +266,6 @@ void timer(int minutes, int seconds) {
 
             for (int i = 0; i < 11; i++) {
                 cout << "             " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << "             " << endl;
-
             }
 
             for (int i = 0; i < 6; i++) {
@@ -285,10 +283,9 @@ void timer(int minutes, int seconds) {
             for (int i = 0; i < 7; i++) {
                 cout << endl;
             }
-            int count = 1;
+            
             for (int i = 0; i < 11; i++) {
                 cout << "                   " << firstDigit[i] << "   " << colon[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "                   " << endl;
-
             }
 
             for (int i = 0; i < 6; i++) {
