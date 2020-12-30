@@ -1,9 +1,8 @@
 ﻿
 #include <iostream>
-#include <stdlib.h>
 #include <windows.h>
 #include <string>
-#include <vector>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -185,16 +184,7 @@ string* getNumber(int number) {
     }
 }
 
-bool isNumberCorrect(int number) {
-    if (number < 1000 || number > 9999) {
-        return false;
-    }
-
-    return true;
-}
-
-
-void timer(int minutes, int seconds) {
+void countdownTimer(int minutes, int seconds) {
     string colon[] = {
         "  ",
         "  ",
@@ -315,18 +305,20 @@ void timer(int minutes, int seconds) {
 int main()
 {
     int number;
+    cout << "Enter a four digit number: ";
     cin >> number;
 
-    /*
-    if (!isNumberCorrect(number)) {
-        cout << "-1";
-        return 0;
+    
+    while (number < 1000 || number > 9999) {
+        cout << "Invalid number! Try again:  ";
+        cin >> number;
     }
-    */
+    
+
     int minutes = number / 60;
     int seconds = number % 60;
 
-    timer(minutes, seconds);
+    countdownTimer(minutes, seconds);
     
     return 0;
 }
