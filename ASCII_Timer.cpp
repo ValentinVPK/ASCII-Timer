@@ -7,8 +7,8 @@
 
 using namespace std;
 
-vector<string> getNumber(int number) {
-    vector<string> zero = {
+string* getNumber(int number) {
+     string* zero = new string[] {
         "0000000000",
         "0        0",
         "0        0",
@@ -22,7 +22,7 @@ vector<string> getNumber(int number) {
         "0000000000"
     };
 
-    vector<string> one = {
+     string* one = new string[] {
         "         1",
         "         1",
         "         1",
@@ -36,7 +36,7 @@ vector<string> getNumber(int number) {
         "         1"
     };
 
-    vector <string> two = {
+     string* two = new string[] {
         "2222222222",
         "         2",
         "         2",
@@ -50,7 +50,7 @@ vector<string> getNumber(int number) {
         "2222222222"
     };
 
-    vector <string> three = {
+     string* three = new string[] {
         "3333333333",
         "         3",
         "         3",
@@ -64,7 +64,7 @@ vector<string> getNumber(int number) {
         "3333333333"
     };
 
-    vector <string> four = {
+     string* four = new string[] {
         "4        4",
         "4        4",
         "4        4",
@@ -78,7 +78,7 @@ vector<string> getNumber(int number) {
         "         4"
     };
 
-    vector <string> five = {
+     string* five = new string[] {
         "5555555555",
         "5         ",
         "5         ",
@@ -92,7 +92,7 @@ vector<string> getNumber(int number) {
         "5555555555"
     };
 
-    vector<string> six = {
+     string* six = new string[] {
         "6666666666",
         "6         ",
         "6         ",
@@ -106,7 +106,7 @@ vector<string> getNumber(int number) {
         "6666666666"
     };
 
-    vector <string> seven = {
+     string* seven = new string[] {
         "7777777777",
         "         7",
         "         7",
@@ -120,7 +120,7 @@ vector<string> getNumber(int number) {
         "         7"
     };
 
-    vector <string> eight = {
+     string* eight = new string[] {
         "8888888888",
         "8        8",
         "8        8",
@@ -134,7 +134,7 @@ vector<string> getNumber(int number) {
         "8888888888"
     };
 
-    vector <string> nine = {
+     string* nine = new string[] {
         "9999999999",
         "9        9",
         "9        9",
@@ -149,39 +149,39 @@ vector<string> getNumber(int number) {
     };
 
     switch (number) {
-    case 0:
-        return zero;
-        break;
-    case 1:
-        return one;
-        break;
-    case 2:
-        return two;
-        break;
-    case 3:
-        return three;
-        break;
-    case 4:
-        return four;
-        break;
-    case 5:
-        return five;
-        break;
-    case 6:
-        return six;
-        break;
-    case 7:
-        return seven;
-        break;
-    case 8:
-        return eight;
-        break;
-    case 9:
-        return nine;
-        break;
-    default:
-        return zero;
-        break;
+        case 0:
+            return zero;
+            break;
+        case 1:
+            return one;
+            break;
+        case 2:
+            return two;
+            break;
+        case 3:
+            return three;
+            break;
+        case 4:
+            return four;
+            break;
+        case 5:
+            return five;
+            break;
+        case 6:
+            return six;
+            break;
+        case 7:
+            return seven;
+            break;
+        case 8:
+            return eight;
+            break;
+        case 9:
+            return nine;
+            break;
+        default:
+            return zero;
+            break;
     }
 }
 
@@ -195,16 +195,16 @@ bool isNumberCorrect(int number) {
 
 
 void timer(int minutes, int seconds) {
-    vector<string> colon = {
+    string colon[] = {
         "  ",
         "  ",
-        "..",
-        "..",
+        "##",
+        "##",
         "  ",
         "  ",
         "  ",
-        "..",
-        "..",
+        "##",
+        "##",
         "  ",
         "  "
     };
@@ -228,15 +228,15 @@ void timer(int minutes, int seconds) {
 
         system("cls");
         if (minutes >= 100) {
-            vector<string> fifthDigit = getNumber(secondsTmp % 10);
+            string* fifthDigit = getNumber(secondsTmp % 10);
             secondsTmp /= 10;
-            vector<string> fourthDigit = getNumber(secondsTmp);
+            string* fourthDigit = getNumber(secondsTmp);
 
-            vector<string> thirdDigit = getNumber(minutesTmp % 10);
+            string* thirdDigit = getNumber(minutesTmp % 10);
             minutesTmp /= 10;
-            vector<string> secondDigit = getNumber(minutesTmp % 10);
+            string* secondDigit = getNumber(minutesTmp % 10);
             minutesTmp /= 10;
-            vector<string> firstDigit = getNumber(minutesTmp);
+            string* firstDigit = getNumber(minutesTmp);
 
             for (int i = 0; i < 7; i++) {
                 cout << endl;
@@ -250,15 +250,21 @@ void timer(int minutes, int seconds) {
                 cout << endl;
             }
             Sleep(1000);
+
+            delete[] firstDigit;
+            delete[] secondDigit;
+            delete[] thirdDigit;
+            delete[] fourthDigit;
+            delete[] fifthDigit;
         }
         else if (minutes >= 10 && minutes < 100) {
-            vector<string> fourthDigit = getNumber(secondsTmp % 10);
+            string* fourthDigit = getNumber(secondsTmp % 10);
             secondsTmp /= 10;
-            vector<string> thirdDigit = getNumber(secondsTmp);
+            string* thirdDigit = getNumber(secondsTmp);
 
-            vector<string> secondDigit = getNumber(minutesTmp % 10);
+            string* secondDigit = getNumber(minutesTmp % 10);
             minutesTmp /= 10;
-            vector<string> firstDigit = getNumber(minutesTmp);
+            string* firstDigit = getNumber(minutesTmp);
 
             for (int i = 0; i < 7; i++) {
                 cout << endl;
@@ -272,13 +278,18 @@ void timer(int minutes, int seconds) {
                 cout << endl;
             }
             Sleep(1000);
+
+            delete[] firstDigit;
+            delete[] secondDigit;
+            delete[] thirdDigit;
+            delete[] fourthDigit;
         }
         else if (minutes < 10) {
-            vector<string> thirdDigit = getNumber(secondsTmp % 10);
+            string* thirdDigit = getNumber(secondsTmp % 10);
             secondsTmp /= 10;
-            vector<string> secondDigit = getNumber(secondsTmp);
+            string* secondDigit = getNumber(secondsTmp);
 
-            vector<string> firstDigit = getNumber(minutesTmp);
+            string* firstDigit = getNumber(minutesTmp);
 
             for (int i = 0; i < 7; i++) {
                 cout << endl;
@@ -292,6 +303,10 @@ void timer(int minutes, int seconds) {
                 cout << endl;
             }
             Sleep(1000);
+
+            delete[] firstDigit;
+            delete[] secondDigit;
+            delete[] thirdDigit;
         }
         seconds--;
     }
