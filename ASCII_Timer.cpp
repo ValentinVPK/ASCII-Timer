@@ -247,7 +247,7 @@ void countdownTimer(int minutes, int seconds) {
             delete[] fourthDigit;
             delete[] fifthDigit;
         }
-        else if (minutes >= 10 && minutes < 100) {
+        else {
             string* fourthDigit = getNumber(secondsTmp % 10);
             secondsTmp /= 10;
             string* thirdDigit = getNumber(secondsTmp);
@@ -273,30 +273,6 @@ void countdownTimer(int minutes, int seconds) {
             delete[] secondDigit;
             delete[] thirdDigit;
             delete[] fourthDigit;
-        }
-        else if (minutes < 10) {
-            string* thirdDigit = getNumber(secondsTmp % 10);
-            secondsTmp /= 10;
-            string* secondDigit = getNumber(secondsTmp);
-
-            string* firstDigit = getNumber(minutesTmp);
-
-            for (int i = 0; i < 7; i++) {
-                cout << endl;
-            }
-            
-            for (int i = 0; i < 11; i++) {
-                cout << "                   " << firstDigit[i] << "   " << colon[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "                   " << endl;
-            }
-
-            for (int i = 0; i < 6; i++) {
-                cout << endl;
-            }
-            Sleep(1000);
-
-            delete[] firstDigit;
-            delete[] secondDigit;
-            delete[] thirdDigit;
         }
         seconds--;
     }
