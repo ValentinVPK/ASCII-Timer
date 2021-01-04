@@ -367,6 +367,9 @@ void countdownTimer(int minutes, int seconds) {
 
 int main()
 {
+    HWND console = GetConsoleWindow();
+    MoveWindow(console, 200, 200, 680, 450, TRUE);
+
     int number;
     cout << "Enter a four digit number: ";
     cin >> number;
