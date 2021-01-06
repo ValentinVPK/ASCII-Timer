@@ -7,267 +7,165 @@
 using namespace std;
 
 string* getNumber(int number) {
-    string* zero = new string[] {
-            "0000000000",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0        0",
-            "0000000000"
-    };
-
-    string* one = new string[] {
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1",
-       "         1"
-    };
-
-    string* two = new string[] {
-       "2222222222",
-       "         2",
-       "         2",
-       "         2",
-       "         2",
-       "2222222222",
-       "2         ",
-       "2         ",
-       "2         ",
-       "2         ",
-       "2222222222"
-    };
-
-    string* three = new string[] {
-       "3333333333",
-       "         3",
-       "         3",
-       "         3",
-       "         3",
-       "3333333333",
-       "         3",
-       "         3",
-       "         3",
-       "         3",
-       "3333333333"
-    };
-
-    string* four = new string[] {
-       "4        4",
-       "4        4",
-       "4        4",
-       "4        4",
-       "4        4",
-       "4444444444",
-       "         4",
-       "         4",
-       "         4",
-       "         4",
-       "         4"
-    };
-
-    string* five = new string[] {
-       "5555555555",
-       "5         ",
-       "5         ",
-       "5         ",
-       "5         ",
-       "5555555555",
-       "         5",
-       "         5",
-       "         5",
-       "         5",
-       "5555555555"
-    };
-
-    string* six = new string[] {
-       "6666666666",
-       "6         ",
-       "6         ",
-       "6         ",
-       "6         ",
-       "6666666666",
-       "6        6",
-       "6        6",
-       "6        6",
-       "6        6",
-       "6666666666"
-    };
-
-    string* seven = new string[] {
-       "7777777777",
-       "         7",
-       "         7",
-       "         7",
-       "         7",
-       "         7",
-       "         7",
-       "         7",
-       "         7",
-       "         7",
-       "         7"
-    };
-
-    string* eight = new string[] {
-       "8888888888",
-       "8        8",
-       "8        8",
-       "8        8",
-       "8        8",
-       "8888888888",
-       "8        8",
-       "8        8",
-       "8        8",
-       "8        8",
-       "8888888888"
-    };
-
-    string* nine = new string[] {
-       "9999999999", 
-       "9        9",
-       "9        9",
-       "9        9",
-       "9        9",
-       "9999999999",
-       "         9",
-       "         9",
-       "         9",
-       "         9",
-       "9999999999"
-    };
-
-    switch (number) {
-        case 1:
-            delete[] zero;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return one;
-            break;
-        case 2:
-            delete[] zero;
-            delete[] one;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return two;
-            break;
-        case 3:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return three;
-            break;
-        case 4:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return four;
-            break;
-        case 5:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return five;
-            break;
-        case 6:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return six;
-            break;
-        case 7:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] eight;
-            delete[] nine;
-            return seven;
-            break;
-        case 8:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] nine;
-            return eight;
-            break;
-        case 9:
-            delete[] zero;
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            return nine;
-            break;
-        default:
-            delete[] one;
-            delete[] two;
-            delete[] three;
-            delete[] four;
-            delete[] five;
-            delete[] six;
-            delete[] seven;
-            delete[] eight;
-            delete[] nine;
-            return zero;
-            break;
+    if (number == 1) {
+        string* one = new string[] {
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1",
+                 "         1"
+        };
+        return one;
+    }
+    else if (number == 2) {
+        string* two = new string[] {
+                "2222222222",
+                "         2",
+                "         2",
+                "         2",
+                "         2",
+                "2222222222",
+                "2         ",
+                "2         ",
+                "2         ",
+                "2         ",
+                "2222222222"
+        };
+        return two;
+    }
+    else if (number == 3) {
+        string* three = new string[] {
+                "3333333333",
+                "         3",
+                "         3",
+                "         3",
+                "         3",
+                "3333333333",
+                "         3",
+                "         3",
+                "         3",
+                "         3",
+                "3333333333"
+        };
+        return three;
+    }
+    else if (number == 4) {
+        string* four = new string[] {
+                "4        4",
+                "4        4",
+                "4        4",
+                "4        4",
+                "4        4",
+                "4444444444",
+                "         4",
+                "         4",
+                "         4",
+                "         4",
+                "         4"
+        };
+        return four;
+    }
+    else if (number == 5) {
+        string* five = new string[] {
+                "5555555555",
+                "5         ",
+                "5         ",
+                "5         ",
+                "5         ",
+                "5555555555",
+                "         5",
+                "         5",
+                "         5",
+                "         5",
+                "5555555555"
+        };
+        return five;
+    }
+    else if (number == 6) {
+        string* six = new string[] {
+                   "6666666666",
+                   "6         ",
+                   "6         ",
+                   "6         ",
+                   "6         ",
+                   "6666666666",
+                   "6        6",
+                   "6        6",
+                   "6        6",
+                   "6        6",
+                   "6666666666"
+        };
+        return six;
+    }
+    else if (number == 7) {
+        string* seven = new string[] {
+                   "7777777777",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7",
+                   "         7"
+        };
+        return seven;
+    }
+    else if (number == 8) {
+        string* eight = new string[] {
+               "8888888888",
+               "8        8",
+               "8        8",
+               "8        8",
+               "8        8",
+               "8888888888",
+               "8        8",
+               "8        8",
+               "8        8",
+               "8        8",
+               "8888888888"
+        };
+        return eight;
+    }
+    else if (number == 9) {
+        string* nine = new string[] {
+               "9999999999",
+               "9        9",
+               "9        9",
+               "9        9",
+               "9        9",
+               "9999999999",
+               "         9",
+               "         9",
+               "         9",
+               "         9",
+               "9999999999"
+        };
+        return nine;
+    }
+    else {
+        string* zero = new string[]{
+                "0000000000",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0        0",
+                "0000000000"
+        };
+        return zero;
     }
 }
 
@@ -323,7 +221,7 @@ void countdownTimer(int minutes, int seconds) {
                 cout << "  " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << "           " << endl;
             }
 
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 6; i++) {
                 cout << endl;
             }
             Sleep(1000);
@@ -351,7 +249,7 @@ void countdownTimer(int minutes, int seconds) {
                 cout << "             " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << "             " << endl;
             }
 
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 6; i++) {
                 cout << endl;
             }
             Sleep(1000);
@@ -374,13 +272,11 @@ int main()
     cout << "Enter a four digit number: ";
     cin >> number;
 
-    
     while (number < 1000 || number > 9999) {
         cout << "Invalid number! Try again:  ";
         cin >> number;
     }
     
-
     int minutes = number / 60;
     int seconds = number % 60;
 
