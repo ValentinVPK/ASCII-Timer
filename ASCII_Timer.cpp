@@ -1,4 +1,18 @@
-﻿
+﻿/**
+*
+* Solution to course project # 10
+* Introduction to programming course
+* Faculty of Mathematics and Informatics of Sofia University
+* Winter semester 2020/2021
+*
+* @author Valentin Krumov
+* @idnumber 62539
+* @compiler VC
+*
+*
+*/
+
+
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -218,7 +232,7 @@ void countdownTimer(int minutes, int seconds) {
             }
             
             for (int i = 0; i < 11; i++) {
-                cout << "  " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << "           " << endl;
+                cout << "  " << firstDigit[i] << "   " << secondDigit[i] << "   " << thirdDigit[i] << "   " << colon[i] << "  " << fourthDigit[i] << "   " << fifthDigit[i] << endl;
             }
 
             for (int i = 0; i < 6; i++) {
@@ -245,9 +259,17 @@ void countdownTimer(int minutes, int seconds) {
                 cout << endl;
             }
 
-            for (int i = 0; i < 11; i++) {
-                cout << "             " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << "             " << endl;
+            if (minutesTmp == 1) {
+                for (int i = 0; i < 11; i++) {
+                    cout << "         " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << endl;
+                }
             }
+            else {
+                for (int i = 0; i < 11; i++) {
+                    cout << "             " << firstDigit[i] << "   " << secondDigit[i] << "   " << colon[i] << "   " << thirdDigit[i] << "   " << fourthDigit[i] << endl;
+                }
+            }
+            
 
             for (int i = 0; i < 6; i++) {
                 cout << endl;
@@ -272,10 +294,12 @@ int main()
     cout << "Enter a four digit number: ";
     cin >> number;
 
+    
     while (number < 1000 || number > 9999) {
         cout << "Invalid number! Try again:  ";
         cin >> number;
     }
+    
     
     int minutes = number / 60;
     int seconds = number % 60;
