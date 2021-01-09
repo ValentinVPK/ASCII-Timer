@@ -17,6 +17,8 @@
 #include <windows.h>
 #include <string>
 #include <stdlib.h>
+#include <limits>
+#undef max
 
 using namespace std;
 
@@ -295,9 +297,17 @@ int main()
     cin >> number;
 
     
-    while (number < 1000 || number > 9999) {
-        cout << "Invalid number! Try again:  ";
-        cin >> number;
+    while (true) {
+        if (cin.fail() || (number < 1000 || number > 9999)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Wrong input! Try again: ";
+            cin >> number;
+        }
+
+        if (!(number < 1000 || number > 9999) && !cin.fail()) {
+            break;
+        }
     }
     
     
