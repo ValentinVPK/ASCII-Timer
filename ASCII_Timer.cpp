@@ -16,7 +16,6 @@
 #include <iostream>
 #include <windows.h>
 #include <string>
-#include <stdlib.h>
 #include <limits>
 #undef max
 
