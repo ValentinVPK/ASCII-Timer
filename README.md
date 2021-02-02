@@ -1,4 +1,2 @@
 # ASCII-Timer
-ФМИ,
-СИ,
-курсов проект по УП практикум - ASCII таймер
+Course Project for Introduction into Programming Course, FMI
